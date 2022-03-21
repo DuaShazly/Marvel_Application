@@ -1,6 +1,5 @@
 package com.example.marvelapplication.data.model.characters
 
-import com.example.marvelapplication.data.model.characters.MarvelCharactersData
 
 data class MarvelCharactersModel(
     val attributionHTML: String,

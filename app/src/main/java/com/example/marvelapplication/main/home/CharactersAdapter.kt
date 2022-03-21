@@ -36,7 +36,6 @@ class CharactersAdapter(private val onCharacterClick: (character: MarvelCharacte
 
         @SuppressLint("SetTextI18n")
         fun bind(character: MarvelCharactersResults) {
-//            itemView.animation= AnimationUtils.loadAnimation(itemView.context,R.anim.anim_vertical_recyclerview)
 
             itemView.setOnClickListener {
                 onCharacterClick.invoke(character)

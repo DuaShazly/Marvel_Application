@@ -1,28 +1,33 @@
 package com.example.marvelapplication.main
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.marvelapplication.main.home.HomeFragment
 import com.example.marvelapplication.R
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.NonCancellable.cancel
 
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-//    private var mFirebaseAnalytics: FirebaseAnalytics? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         initView()
     }
+
+
 
     private fun initView() {
         val homeFragment = HomeFragment()
         replaceFragment(homeFragment)
+
     }
 
     private fun replaceFragment(fragment: Fragment) {
@@ -46,14 +51,14 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         if (supportFragmentManager.backStackEntryCount==0) {
             val builder = AlertDialog.Builder(this)
-                .setTitle("Uygulama Kapatılacak")
-                .setMessage("Uygulamayı kapatmak istiyor musunuz?")
+                .setTitle(getString(R.string.application_be_closed))
+                .setMessage(getString(R.string.do_you_want_to_close))
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setPositiveButton("Kapat") { dialogInterface, _ ->
+                .setPositiveButton(getString(R.string.close)) { dialogInterface, _ ->
                     dialogInterface.cancel()
                     android.os.Process.killProcess(android.os.Process.myPid())
                 }
-                .setNegativeButton("İptal Et") { dialogInterface, _ ->
+                .setNegativeButton(getString(R.string.cancell)) { dialogInterface, _ ->
                     dialogInterface.cancel()
                 }
 

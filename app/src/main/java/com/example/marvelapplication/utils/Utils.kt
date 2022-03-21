@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 object Utils {
+
     fun showToast(context : Context, message : String) = Toast.makeText(context,message, Toast.LENGTH_SHORT).show()
 
     fun isNetworkAvailable(context: Context): Boolean {

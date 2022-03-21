@@ -3,9 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="248dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="2dp"
-    app:cardCornerRadius="12dp"
-    app:cardUseCompatPadding="true">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,25 +12,29 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
+            android:scaleType="center"
+            tools:src ="@drawable/test"
             android:id="@+id/imgCharacter"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-/>
+            android:background="@drawable/black_to_white_gradient"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:maxLines="2"
-            android:ellipsize="end"
+            android:id="@+id/textName"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:layout_marginHorizontal="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rectangle"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/textName"/>
+            tools:layout_editor_absoluteX="16dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

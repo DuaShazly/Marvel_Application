@@ -4,4 +4,16 @@
     <string name="no_internet">Please check your internet connection.</string>
     <string name="title_comic">Comic book</string>
     <string name="title_characters">Characters</string>
+    <string name="application_be_closed">Application will be Closed</string>
+    <string name="do_you_want_to_close">Do you want to close the application?</string>
+    <string name="close">Close</string>
+    <string name="cancell">Cancel</string>
+    <string name="name">Name</string>
+    <string name="descripton">Description</string>
+    <string name="comics">Comics</string>
+    <string name="series">Series</string>
+    <string name="related_links">Related Links</string>
+    <string name="detais">Detail</string>
+    <string name="wiki">Wiki</string>
+    <string name="comic_link">Comic Link</string>
 </resources>

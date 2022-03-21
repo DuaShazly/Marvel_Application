@@ -26,9 +26,8 @@ interface ServiceApi {
         @Query("apikey") apiKey: String = Constants.API_PUBLIC_KEY,
         @Query("ts") ts: String,
         @Query("hash") hash: String,
-        @Query("limit") limit: Int = Constants.COMICS_LIMIT,
         @Query("dateRange") dateRange: String,
-        @Query("orderBy") orderBy: String = Constants.COMICS_ORDER_BY,
+
     ): Response<ComicsModel>
 
 }

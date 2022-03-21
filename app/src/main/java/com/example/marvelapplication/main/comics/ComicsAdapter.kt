@@ -1,20 +1,20 @@
-package com.app.marvelapp.ui.main.comics
+package com.example.marvelapplication.main.comics
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelapplication.R
 import com.example.marvelapplication.data.model.comics.ComicsResults
+import com.example.marvelapplication.main.comics.ComicsAdapter.ComicsViewHolder
 import com.example.marvelapplication.utils.GlideUtils
 
 
 class ComicsAdapter(private var comics: List<ComicsResults>)
-    : RecyclerView.Adapter<ComicsAdapter.ComicsViewHolder>() {
+    : RecyclerView.Adapter<ComicsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComicsViewHolder {
         val view = LayoutInflater .from(parent.context)
@@ -46,7 +46,6 @@ class ComicsAdapter(private var comics: List<ComicsResults>)
 
         @SuppressLint("SetTextI18n")
         fun bind(comic: ComicsResults) {
-//            itemView.animation= AnimationUtils.loadAnimation(itemView.context,R.anim.anim_vertical_recyclerview)
 
             comic.thumbnail.run {
                 GlideUtils.urlToImageView(imgComic.context, "$path.$extension",imgComic)

@@ -2,6 +2,7 @@ package com.example.marvelapplication.main.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -30,6 +31,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun initView() {
+
         binding.run {
             charactersAdapter = CharactersAdapter {character -> characterClick(character) }
             recyclerViewCharacters.layoutManager = LinearLayoutManager(requireContext(),RecyclerView.VERTICAL,false)

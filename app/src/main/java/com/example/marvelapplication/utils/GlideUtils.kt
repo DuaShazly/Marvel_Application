@@ -10,6 +10,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.marvelapplication.utils.ImageRequestListener
 
 object GlideUtils {
+
     fun urlToImageView(context: Context, url: String, img: ImageView) {
         Glide.with(context)
             .load(Uri.parse(url))

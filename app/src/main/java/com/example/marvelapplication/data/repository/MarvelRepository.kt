@@ -10,8 +10,9 @@ import com.example.marvelapplication.utils.Utils.safeApiCall
 import java.util.*
 
 class MarvelRepository {
-    val ts = (Calendar.getInstance(TimeZone.getTimeZone("UTC")).timeInMillis / 1000L).toString()
-    val hash = Utils.md5(ts+ Constants.API_PRIVATE_KEY+ Constants.API_PUBLIC_KEY)
+
+    private val ts = (Calendar.getInstance(TimeZone.getTimeZone("UTC")).timeInMillis / 1000L).toString()
+    private val hash = Utils.md5(ts+ Constants.API_PRIVATE_KEY+ Constants.API_PUBLIC_KEY)
 
     suspend fun getCharacters(offset: Int): Resource<MarvelCharactersModel> {
         return safeApiCall(call = { ServiceClientInstance.getInstance().api.getCharacters(
