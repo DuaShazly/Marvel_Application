@@ -4,19 +4,18 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.paging.PagedListAdapter
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelapplication.R
 import com.example.marvelapplication.data.model.characters.MarvelCharactersResults
 import com.example.marvelapplication.utils.GlideUtils
 import com.example.marvelapplication.main.home.CharactersAdapter.CharactersViewHolder
+import com.example.marvelapplication.utils.Comparator.CHARACTER_COMPARATOR
 
 class CharactersAdapter(private val onCharacterClick: (character: MarvelCharactersResults) -> Unit)
-    : PagedListAdapter<MarvelCharactersResults, CharactersViewHolder>(characterDiff) {
+    : PagedListAdapter<MarvelCharactersResults, CharactersViewHolder>(CHARACTER_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHolder {
         val view = LayoutInflater .from(parent.context)
@@ -49,16 +48,4 @@ class CharactersAdapter(private val onCharacterClick: (character: MarvelCharacte
         }
     }
 
-    companion object {
-        val characterDiff = object: DiffUtil.ItemCallback<MarvelCharactersResults>() {
-            override fun areItemsTheSame(old: MarvelCharactersResults, new: MarvelCharactersResults): Boolean {
-                return old.id == new.id
-            }
-
-            override fun areContentsTheSame(old: MarvelCharactersResults, new: MarvelCharactersResults): Boolean {
-                return old == new
-            }
-
-        }
-    }
 }

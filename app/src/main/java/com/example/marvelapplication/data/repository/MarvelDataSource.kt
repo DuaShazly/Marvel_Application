@@ -21,8 +21,8 @@ private val repository: MarvelRepository
             val response = repository.getCharacters(offset = 0)
             response.data?.let { responseData ->
                 Log.d("marvelpage","page: "+"1"+",loadsize: "+params.requestedLoadSize+
-                        ",total: "+responseData.data.results.size)
-                callback.onResult(responseData.data.results, null, (Constants.FIRST_PAGE+1).toString())
+                        ",total: "+responseData.data.results?.size)
+                callback.onResult(responseData.data.results as List<MarvelCharactersResults>, null, (Constants.FIRST_PAGE+1).toString())
             }
 
         }
@@ -36,8 +36,8 @@ private val repository: MarvelRepository
                 val response = repository.getCharacters(offset = numberOfItems)
                 response.data?.let { responseData ->
                     Log.d("marvelpage","page: "+page+",loadsize: "+numberOfItems+
-                            ",total: "+responseData.data.results.size)
-                    callback.onResult(responseData.data.results, (page.toInt()+1).toString())
+                            ",total: "+responseData.data.results?.size)
+                    callback.onResult(responseData.data.results as List<MarvelCharactersResults>, (page.toInt()+1).toString())
                 }
         }
 
@@ -50,8 +50,8 @@ private val repository: MarvelRepository
             val response = repository.getCharacters(offset = numberOfItems)
             response.data?.let { responseData ->
                 Log.d("marvelpage","page: "+page+",loadsize: "+numberOfItems+
-                        ",total: "+responseData.data.results.size)
-                callback.onResult(responseData.data.results, (page.toInt()-1).toString())
+                        ",total: "+responseData.data.results?.size)
+                callback.onResult(responseData.data.results as List<MarvelCharactersResults>, (page.toInt()-1).toString())
             }
         }
 

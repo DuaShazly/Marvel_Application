@@ -1,9 +1,12 @@
 package com.example.marvelapplication.data.repository
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
 import com.example.marvelapplication.data.model.characters.MarvelCharactersModel
 import com.example.marvelapplication.data.model.comics.ComicsModel
 import com.example.marvelapplication.data.remote.Resource
 import com.example.marvelapplication.data.remote.ServiceClientInstance
+import com.example.marvelapplication.main.home.CharacterPagingSource
 import com.example.marvelapplication.utils.Constants
 import com.example.marvelapplication.utils.Utils
 import com.example.marvelapplication.utils.Utils.safeApiCall
@@ -25,5 +28,18 @@ class MarvelRepository {
             ts = ts, hash = hash, characterId = characterId, dateRange = dateRange
         ) })
     }
+
+
+    suspend fun searchCharacter(name:String): Resource<MarvelCharactersModel> {
+        return safeApiCall(call = { ServiceClientInstance.getInstance().api.searchCharacter(
+            ts = ts, hash = hash, url = name
+        ) })
+    }
+
+
+    fun searchCharacter2(query: String) = Pager(
+        config = PagingConfig(pageSize = 20, maxSize = 100, enablePlaceholders = false),
+        pagingSourceFactory = { CharacterPagingSource( ServiceClientInstance.getInstance().api, query) }
+    ).flow
 
 }

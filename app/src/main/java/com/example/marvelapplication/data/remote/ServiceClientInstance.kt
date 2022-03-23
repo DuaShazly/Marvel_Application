@@ -13,8 +13,7 @@ class ServiceClientInstance {
         private var instance : ServiceClientInstance? = null
 
         fun getInstance(): ServiceClientInstance {
-            if (instance == null)
-            {
+            if (instance == null) {
                 instance = ServiceClientInstance()
             }
             return instance!!

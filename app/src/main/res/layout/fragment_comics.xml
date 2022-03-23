@@ -121,37 +121,36 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:paddingVertical="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/relatedLinksLabel"
+            app:layout_constraintBottom_toTopOf="@+id/SeriesLabel"
             app:layout_constraintTop_toBottomOf="@+id/comicesLabel"
 
             />
 
 
-<!--        <TextView-->
-<!--            android:id="@+id/SeriesLabel"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="16dp"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:text="@string/series"-->
-<!--            android:textColor="@color/red"-->
-<!--            android:textSize="14sp"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/recyclerViewComics" />-->
+        <TextView
+            android:id="@+id/SeriesLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/series"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewComics" />
 
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/recyclerViewSeries"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="8dp"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:nestedScrollingEnabled="true"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            android:paddingVertical="8dp"-->
-<!--            app:layout_constraintBottom_toTopOf="@+id/vieww"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/SeriesLabel"-->
-
-<!--            />-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewSeries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingVertical="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/relatedLinksLabel"
+            app:layout_constraintTop_toBottomOf="@+id/SeriesLabel"
+            />
 
         <TextView
             android:id="@+id/relatedLinksLabel"
@@ -163,7 +162,7 @@
             android:visibility="invisible"
             android:textColor="@color/red"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/recyclerViewComics" />
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewSeries" />
 
         <TextView
             android:id="@+id/detailsLabel"

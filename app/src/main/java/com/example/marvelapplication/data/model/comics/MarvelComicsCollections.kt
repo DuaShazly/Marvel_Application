@@ -6,7 +6,6 @@ data class MarvelComicsCollections(
     val collectionURI: String,
     val returned: Int,
     val items: List<MarvelComicsCollectionItems>,
-//    val series: List<MarvelComicsCollections>,
-//    val events: List<MarvelComicsCollections>
+
 
 )

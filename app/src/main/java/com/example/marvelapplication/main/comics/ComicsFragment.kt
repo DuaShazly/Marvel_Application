@@ -56,15 +56,15 @@ class ComicsFragment(private val character: MarvelCharactersResults) :
                 GridLayoutManager(requireContext(), 1, RecyclerView.HORIZONTAL, false)
             (recyclerViewComics.layoutManager as GridLayoutManager).orientation =
                 GridLayoutManager.HORIZONTAL
-
-
-//            recyclerViewSeries.layoutManager =
-//                GridLayoutManager(requireContext(), 1, RecyclerView.HORIZONTAL, false)
-//            (recyclerViewSeries.layoutManager as GridLayoutManager).orientation =
-//                GridLayoutManager.HORIZONTAL
-
             recyclerViewComics.adapter = comicsAdapter
-//            recyclerViewSeries.adapter=comicsAdapter
+
+
+            recyclerViewSeries.layoutManager =
+                GridLayoutManager(requireContext(), 1, RecyclerView.HORIZONTAL, false)
+            (recyclerViewSeries.layoutManager as GridLayoutManager).orientation =
+                GridLayoutManager.HORIZONTAL
+
+            recyclerViewSeries.adapter=comicsAdapter
 
 
             character.run {

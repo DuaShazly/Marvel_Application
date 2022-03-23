@@ -5,8 +5,10 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.example.marvelapplication.main.home.HomeFragment
 import com.example.marvelapplication.R
+import com.example.marvelapplication.data.repository.MarvelDataSource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.NonCancellable.cancel
 
@@ -21,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         initView()
     }
-
 
 
     private fun initView() {
